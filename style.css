@@ -116,13 +116,22 @@ p {
 }
 
 @media (max-width: 768px) {
-  .item-color {
-    font-size: 90%;
-    padding: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
+  
+	.left{
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.item-color {
+    	font-size: 90%;
+    	padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+  	}
 }
 
 .left a {
