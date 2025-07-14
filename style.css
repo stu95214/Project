@@ -51,119 +51,154 @@ table {
 }
 
 /* 自訂樣式區 */
-
+/* 共用樣式 */
 .total {
-	display: flex;           /* 設為 Flex 容器，使子元素可橫向排列 */
-}
-
-h1 {
-	font-size: 36px;         /* 設定主標題字體大小 */
-}
-
-p {
-	font-size: 24px;         /* 段落文字大小 */
+	display: flex;
+	flex-wrap: wrap; /* 當寬度不足時換行排列 */
 }
 
 .left {
 	background-color: #e7eeea; /* 左側背景色 */
-	width: 30%;                /* 占整體寬度的 30% */
-	height: 100vh;             /* 高度為整個視窗高度 */
-	text-align: center;        /* 文字置中 */
-}
-
-.left a:hover {
-	color: red;                /* 滑鼠移至超連結時變紅 */
-}
-
-.photo img {
-	display: flex;             /* 設為彈性元素（實際沒作用，img 預設為 inline） */
-	max-width: 100%;           /* 圖片不超過容器寬度 */
-	height: 50%;               /* 高度設為容器的一半 */
+	width: 30%; /* 左側佔寬度的 30% */
+	min-width: 200px; /* 最小寬度 200px */
+	height: 100vh; /* 高度填滿整個視窗高度 */
+	/* 以下是原本被註解的置中設定 */
+	/* text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; */
 }
 
 .photo {
-	min-height: 15%;           /* 最小高度 15% */
-	display: flex;             /* 使用 flex 置中圖片 */
-	align-items: center;
-	justify-content: center;
+	margin-top: 15%; /* 往下留白 */
+	padding-left: 5%; /* 左邊留白 */
 }
 
 .bottom {
-	height: 50vh;              /* 高度為視窗的一半 */
-	display: flex;             /* 使用 flex 排版 */
-	flex-direction: column;    /* 子元素垂直排列 */
-}
-
-.item {
-	height: 30%;               /* 每項目占 bottom 的 30% 高度 */
+	height: 80vh; /* 高度 80% 視窗高 */
 	display: flex;
-	flex-wrap: wrap;           /* 子項目換行 */
-	justify-content: center;   /* 子項目水平置中 */
-	align-items: center;       /* 子項目垂直置中 */
-}
-
-.item a{
-	text-decoration: none;   /* 移除底線 */
-}
-
-.item-color{
-	background-color: yellow;
-	border: red 0.2vw solid;
-	border-radius: 10px;
-	padding: 10px;
-	white-space: nowrap; /* 避免文字自動換行 */
-	display: inline-block; /* 讓寬度根據內容調整 */
-}
-
-@media (max-width: 768px) {
-  
-	.left{
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.bottom{
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items:center ;
-	}
-
-	.item-color {
-    	font-size: 90%;
-    	padding: 5px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-  	}
-}
-
-.left a {
-	font-size: 150%;           /* 左側連結字體放大 1.5 倍 */
+	justify-content: space-around; /* 子元素平均分佈 */
+	align-items: center; /* 垂直置中 */
+	/* border: red 5px solid; */ /* 原本被註解掉的除錯用框線 */
 }
 
 .right {
-	width: 70%;                /* 占整體寬度的 70% */
-	height: 100vh;             /* 高度為整個視窗高度 */
+	width: 70%; /* 右側佔寬度的 70% */
+	height: 100vh; /* 高度填滿整個視窗高度 */
 }
 
-.rh1 {
-	/* border: black 5px solid;  可選的邊框樣式，預設關閉 */
-	padding-top: 10%;          /* 上內距為容器高度的 10% */
-	padding-left: 5%;          /* 左內距 5% */
-	height: 10%;               /* 高度為容器的 10% */
+.left a {
+	font-size: 150%; /* 左側連結字體放大 1.5 倍 */
+	text-decoration: none; /* 移除底線 */
 }
 
-.rp {
-	/* border: red 5px solid;  可選的邊框樣式，預設關閉 */
-	padding-left: 5%;          /* 左內距 5% */
+.left a:hover {
+	color: red; /* 滑過時文字變紅 */
+}
+
+.bottom {
+	display: flex;
+	flex-direction: column; /* 垂直排列 */
+	gap: 1rem; /* 每個項目之間留 1rem 間距 */
+	margin-top: 1rem; /* 上方留 1rem 間距 */
+}
+
+.item-color {
+	background-color: #FFFF78; /* 淡黃色背景 */
+	border: red 0.2vw solid; /* 紅色邊框 */
+	border-radius: 10px; /* 圓角 */
+	padding: 10px; /* 內距 */
+	white-space: nowrap; /* 不換行 */
+	display: inline-block; /* 行內區塊 */
+}
+
+/* 文字 & 圖片樣式 */
+h1 {
+	font-size: 36px; /* 標題字體大小 */
+	padding-top: 10%; /* 上方留白 */
+	padding-left: 5%; /* 左邊留白 */
+	height: 10%; /* 高度佔視窗 10% */
+}
+
+p {
+	font-size: 24px; /* 段落字體大小 */
+	padding-left: 5%; /* 左邊留白 */
 }
 
 .img2 {
-	width: 100%;               /* 寬度填滿容器 */
-	height: 60%;               /* 高度為容器的 60% */
+	width: 100%; /* 寬度佔滿容器 */
+	height: auto; /* 高度自動 */
+	max-height: 60%; /* 最大高度 60% */
+	object-fit: cover; /* 填滿容器，保持比例並裁切 */
+}
+
+/* 平板 (中等螢幕) */
+@media (max-width: 991px) {
+	.left {
+		width: 30%; /* 保持 30% 寬 */
+		height: auto; /* 高度自適應 */
+		flex-direction: row; /* 內部元素水平排列 */
+		flex-wrap: wrap; /* 允許換行 */
+		justify-content: center; /* 水平置中 */
+		align-items: center; /* 垂直置中 */
+	}
+
+	.right {
+		width: 70%; /* 右側保持 70% */
+		height: auto; /* 高度自適應 */
+	}
+
+	.bottom {
+		flex-direction: row; /* 改為橫向排列 */
+		flex-wrap: wrap; /* 允許換行 */
+		justify-content: center; /* 水平置中 */
+	}
+
+	.item {
+		margin: 10px; /* 每個項目之間留空 */
+		/* border: black 5px solid; */ /* 被註解的除錯框線 */
+	}
+	/* 
+	.photo {
+		max-width: 80%; 
+		height: auto; 
+	} */
+}
+
+/* 手機 (小螢幕) */
+@media (max-width: 575px) {
+	.left {
+		width: 100%; /* 左側改佔滿整個寬度 */
+		height: auto; /* 高度自適應 */
+		flex-direction: column; /* 垂直排列 */
+	}
+
+	.right {
+		width: 100%; /* 右側改佔滿整個寬度 */
+		height: auto; /* 高度自適應 */
+	}
+
+	.bottom {
+		flex-direction: column; /* 垂直排列 */
+		gap: 0.5rem; /* 間距縮小 */
+	}
+
+	h1 {
+		font-size: 28px; /* 標題字體縮小 */
+	}
+
+	p {
+		font-size: 18px; /* 段落字體縮小 */
+	}
+
+	.item-color {
+		font-size: 80%; /* 字體縮小 */
+		padding: 5px; /* 內距縮小 */
+	}
+
+	.photo {
+		max-width: 80%; /* 照片最大寬度 80% */
+		height: auto; /* 高度自適應 */
+	}
 }
