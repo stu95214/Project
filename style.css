@@ -1,0 +1,150 @@
+/* Reset CSS - 將各瀏覽器預設樣式歸零，統一外觀 */
+/* 來源：http://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;               /* 移除預設外距 */
+	padding: 0;              /* 移除預設內距 */
+	border: 0;               /* 移除預設邊框 */
+	font-size: 100%;         /* 設定字體大小為瀏覽器預設 */
+	font: inherit;           /* 繼承父元素字型設定 */
+	vertical-align: baseline;/* 垂直對齊基準線 */
+}
+
+/* 為舊版瀏覽器設定 HTML5 元素為區塊元素 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;          /* 行高設定為 1，統一排版 */
+}
+
+ol, ul {
+	list-style: none;        /* 移除清單的預設圓點或編號 */
+}
+
+blockquote, q {
+	quotes: none;            /* 移除引用的引號 */
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';             /* 移除引號前後的內容 */
+	content: none;
+}
+
+table {
+	border-collapse: collapse;  /* 表格邊框合併 */
+	border-spacing: 0;          /* 移除表格儲存格間距 */
+}
+
+/* 自訂樣式區 */
+
+.total {
+	display: flex;           /* 設為 Flex 容器，使子元素可橫向排列 */
+}
+
+h1 {
+	font-size: 36px;         /* 設定主標題字體大小 */
+}
+
+p {
+	font-size: 24px;         /* 段落文字大小 */
+}
+
+.left {
+	background-color: #e7eeea; /* 左側背景色 */
+	width: 30%;                /* 占整體寬度的 30% */
+	height: 100vh;             /* 高度為整個視窗高度 */
+	text-align: center;        /* 文字置中 */
+}
+
+.left a:hover {
+	color: red;                /* 滑鼠移至超連結時變紅 */
+}
+
+.photo img {
+	display: flex;             /* 設為彈性元素（實際沒作用，img 預設為 inline） */
+	max-width: 100%;           /* 圖片不超過容器寬度 */
+	height: 50%;               /* 高度設為容器的一半 */
+}
+
+.photo {
+	min-height: 15%;           /* 最小高度 15% */
+	display: flex;             /* 使用 flex 置中圖片 */
+	align-items: center;
+	justify-content: center;
+}
+
+.bottom {
+	height: 50vh;              /* 高度為視窗的一半 */
+	display: flex;             /* 使用 flex 排版 */
+	flex-direction: column;    /* 子元素垂直排列 */
+}
+
+.item {
+	height: 30%;               /* 每項目占 bottom 的 30% 高度 */
+	display: flex;
+	flex-wrap: wrap;           /* 子項目換行 */
+	justify-content: center;   /* 子項目水平置中 */
+	align-items: center;       /* 子項目垂直置中 */
+}
+
+.item a{
+	text-decoration: none;   /* 移除底線 */
+}
+
+.item-color{
+	background-color: yellow;
+	/* width: 100%; */
+	border: red 0.2vw solid;
+	border-radius: 10px;
+	padding: 10px;
+	white-space: nowrap; /* 避免文字自動換行 */
+	display: inline-block; /* 讓寬度根據內容調整 */
+}
+
+@media (max-width: 768px) {
+  .item-color {
+    font-size: 90%;
+    padding: 5px;
+  }
+}
+
+.left a {
+	font-size: 150%;           /* 左側連結字體放大 1.5 倍 */
+}
+
+.right {
+	width: 70%;                /* 占整體寬度的 70% */
+	height: 100vh;             /* 高度為整個視窗高度 */
+}
+
+.rh1 {
+	/* border: black 5px solid;  可選的邊框樣式，預設關閉 */
+	padding-top: 10%;          /* 上內距為容器高度的 10% */
+	padding-left: 5%;          /* 左內距 5% */
+	height: 10%;               /* 高度為容器的 10% */
+}
+
+.rp {
+	/* border: red 5px solid;  可選的邊框樣式，預設關閉 */
+	padding-left: 5%;          /* 左內距 5% */
+}
+
+.img2 {
+	width: 100%;               /* 寬度填滿容器 */
+	height: 60%;               /* 高度為容器的 60% */
+}

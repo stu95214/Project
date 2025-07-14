@@ -1,0 +1,39 @@
+# --- macOS 系統檔案 ---
+.DS_Store
+.Trashes
+.AppleDouble
+.LSOverride
+
+# --- VSCode 編輯器 ---
+.vscode/
+*.code-workspace
+
+# --- Python / Jupyter / Anaconda ---
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.conda/
+.anaconda/
+.spyder-py3/
+.env
+.env.*
+
+# --- Zsh / Shell 類設定檔（如果你不想追蹤）---
+.zshrc
+.zprofile
+.zsh_history
+.zsh_sessions/
+.zcompdump*
+
+# --- Git / 組態檔案快照或衝突檔 ---
+*.orig
+*.swp
+
+# --- 上層目錄（防止誤加 ~/ 家目錄或桌面）---
+../*
+
+# --- 其他常見資料夾 ---
+node_modules/
+dist/
+build/
+coverage/
